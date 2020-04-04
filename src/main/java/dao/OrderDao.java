@@ -53,7 +53,7 @@ public class OrderDao extends GenericDao<Order> {
     // 4. findAllContainingProduct()
     public List<Order> findAllContainingProduct(Product product) {
         openSession();
-        Query query = session.createQuery("Select o from Order o join fetch o.products p where p = :product").setParameter("product", product);
+        Query query = session.createQuery("Select o from Order o join fetch o.cart c join fetch c.product p where p = :product").setParameter("product", product);
         List<Order> orders = query.getResultList();
         session.close();
         return orders;
@@ -67,4 +67,6 @@ public class OrderDao extends GenericDao<Order> {
         session.close();
         return orders;
     }
+
+
 }

@@ -20,5 +20,6 @@
     <mapping class="model.Order"/>
     <mapping class="model.Product"/>
     <mapping class="model.Category"/>
+    <mapping class="model.Cart"/>
 </session-factory>
 </hibernate-configuration>

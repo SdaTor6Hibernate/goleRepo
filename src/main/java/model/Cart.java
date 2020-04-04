@@ -5,12 +5,13 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
 @EqualsAndHashCode(exclude = {"order", "product"})
 @ToString(exclude = {"order", "product"})
-public class Cart {
+public class Cart implements Serializable {
 
     @Column(name = "CRT_QUANTITY")
     private int quantity;
