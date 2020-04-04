@@ -42,8 +42,4 @@ public class User implements ModelClass {
         return fullName = firstName + " "+lastName;
     }
 
-    @Override
-    public String toString(){
-        return ""+id;
-    }
 }

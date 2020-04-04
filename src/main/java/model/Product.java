@@ -27,7 +27,7 @@ public class Product implements ModelClass {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRO_CAT_ID", referencedColumnName = "CAT_ID")
     private Category category;
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "products")
-    private Set<Order> orders = new HashSet<>();
+    @OneToMany(mappedBy = "product")
+    private Set<Cart> cart = new HashSet<>();
 
 }

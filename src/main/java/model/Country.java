@@ -18,9 +18,5 @@ public class Country implements ModelClass {
     @Column(name = "CO_ALIAS")
     private String alias;
 
-    @Override
-    public String toString(){
-        return ""+id;
-    }
 
 }
