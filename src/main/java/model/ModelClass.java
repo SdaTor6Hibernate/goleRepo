@@ -38,4 +38,6 @@ public abstract class ModelClass {
     public void setAddedDate(LocalDateTime addedDate) {
         this.addedDate = addedDate;
     }
+
+
 }
