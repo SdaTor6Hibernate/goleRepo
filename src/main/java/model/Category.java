@@ -6,12 +6,9 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class Category implements ModelClass {
+@AttributeOverride(name = "id", column = @Column(name = "CAT_ID"))
+public class Category extends ModelClass {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CAT_ID")
-    private int id;
     @Column(name = "CAT_NAME")
     private String name;
 

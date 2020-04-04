@@ -7,12 +7,9 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class Country implements ModelClass {
+@AttributeOverride(name = "id", column = @Column(name = "CO_ID"))
+public class Country extends ModelClass {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CO_ID")
-    private int id;
     @Column(name = "CO_NAME")
     private String name;
     @Column(name = "CO_ALIAS")

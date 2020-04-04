@@ -14,12 +14,9 @@ import java.util.Set;
 @NamedQueries({@NamedQuery(name = "user.select", query = "Select u from User u where u.email=:email")})
 @EqualsAndHashCode(exclude = {"address", "orders"})
 @ToString(exclude = {"address", "orders"})
-public class User implements ModelClass {
+@AttributeOverride(name = "id", column = @Column(name = "USR_ID"))
+public class User extends ModelClass {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "USR_ID")
-    private int id;
     @Column(name = "USR_FIRSTNAME")
     private String firstName;
     @Column(name = "USR_LASTNAME")

@@ -13,11 +13,9 @@ import java.util.Set;
 @Data
 @EqualsAndHashCode(exclude = {"orders", "category"})
 @ToString(exclude = {"orders", "category"})
-public class Product implements ModelClass {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PRO_ID")
-    private int id;
+@AttributeOverride(name = "id", column = @Column(name = "PRO_ID"))
+public class Product extends ModelClass {
+
     @Column(name = "PRO_NAME")
     private String name;
     @Column(name = "PRO_PRICE")

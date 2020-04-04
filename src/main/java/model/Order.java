@@ -16,12 +16,9 @@ import java.util.Set;
 @Data
 @EqualsAndHashCode(exclude = {"products", "user"})
 @ToString(exclude = {"products", "user"})
-public class Order implements ModelClass {
+@AttributeOverride(name = "id", column = @Column(name = "ORD_ID"))
+public class Order extends ModelClass {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ORD_ID")
-    private int id;
     @Column(name = "ORD_DATE")
     private LocalDateTime orderDate;
     @Column(name = "ORD_PRICE")

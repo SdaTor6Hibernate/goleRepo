@@ -11,12 +11,9 @@ import javax.persistence.*;
 @Data
 @ToString(exclude = "country")
 @EqualsAndHashCode(exclude = "country")
-public class Address implements ModelClass{
+@AttributeOverride(name = "id", column = @Column(name = "ADD_ID"))
+public class Address extends ModelClass{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ADD_ID")
-    private int id;
     @Column(name = "ADD_STREET")
     private String street;
     @Column(name = "ADD_BUILDING_NO")
